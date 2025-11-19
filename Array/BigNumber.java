@@ -28,7 +28,7 @@ public class BigNumber {
 
     }
 
-    public String String() {
+    public String toString() {
         String out = "";
 
         for (byte digit : this.data) {
