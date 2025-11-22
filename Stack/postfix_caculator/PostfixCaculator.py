@@ -12,8 +12,16 @@ def Calculator(s) -> int:
             temp_2 = stack.pop()
             
             result = 0
-             
-             
+            
+            condition = not (token == '/' & temp_2 == 0)
+            assert condition, "can not divide numbers by zero!"
+            
+            results = {'+': (temp_1 + temp_2), '-': (temp_1 - temp_2),
+                       '*': (temp_1 * temp_2), '/': (temp_1 / temp_2),
+                       '^': (temp_1 ** temp_2)}
+            
+            result = results[token]
+            
             stack.append(result)
             
         else:
