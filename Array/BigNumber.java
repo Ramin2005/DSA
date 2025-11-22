@@ -28,18 +28,18 @@ public class BigNumber {
 
     }
 
-    public BigNumber(int number){
+    public BigNumber(int number) {
         int copy = number;
         int n = (copy + "").length();
 
-        for(int i = (n - 1); i > -1; i--){
+        for (int i = (n - 1); i > -1; i--) {
 
             byte temp = (byte) (copy % 10);
-            
+
             this.data[i] = temp;
 
             copy = (copy - temp) / 10;
-            
+
         }
 
         this.data = new byte[n];
