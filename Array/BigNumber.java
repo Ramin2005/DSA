@@ -3,6 +3,22 @@ public class BigNumber {
 
     private byte[] data;
 
+    public BigNumber(byte[] data) throws Exception {
+
+        for (byte digit : data) {
+
+            if (digit > 9 || digit < 0) {
+
+                throw new Exception("Invalid number entered!");
+
+            }
+
+        }
+
+        this.data = data.clone();
+
+    }
+
     public BigNumber(String number) throws Exception {
         this.data = new byte[number.length()];
 
@@ -22,12 +38,6 @@ public class BigNumber {
 
     }
 
-    public BigNumber(byte[] data) {
-
-        this.data = data.clone();
-
-    }
-
     public BigNumber(int number) {
         int copy = number;
         int n = (copy + "").length();
@@ -43,6 +53,14 @@ public class BigNumber {
         }
 
         this.data = new byte[n];
+    }
+
+    public void increment() {
+
+    }
+
+    public void decrement() {
+
     }
 
     public String toString() {
